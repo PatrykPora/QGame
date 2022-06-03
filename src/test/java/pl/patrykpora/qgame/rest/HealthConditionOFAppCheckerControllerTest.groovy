@@ -14,11 +14,11 @@ class HealthConditionOFAppCheckerControllerTest extends Specification {
     @Autowired
     private MockMvc mvc
 
-    def "when get is performed response status is 200 and content 'checkHealthConditionController works ok'"() {
-        expect: "status is 200 and the response is 'checkHealthConditionController works ok'"
+    def "when get is performed response status is 200"() {
+        expect: "status is 200"
         mvc.perform(MockMvcRequestBuilders.get("/api/healthCondition"))
                 .andReturn()
                 .response
-                .contentAsString == "checkHealthConditionController works ok"
+                .status == 200
     }
 }
