@@ -1,19 +1,33 @@
 package pl.patrykpora.qgame;
 
 import lombok.extern.java.Log;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import pl.patrykpora.qgame.entity.Player;
+import pl.patrykpora.qgame.repository.PlayerRepository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.List;
 
 @Component
 @Log
 public class StartQGameRunner implements CommandLineRunner {
 
+    @Autowired
+    private PlayerRepository playerRepository;
+
     @Override
     public void run(String... args) throws Exception {
-        log.info("started executing....");
 
-        Player player = new Player("patryk");
-        log.info("Created player data = " + player);
+        playerRepository.save(new Player("patryk"));
+        playerRepository.save(new Player("ania"));
+        playerRepository.save(new Player("arti"));
+        playerRepository.save(new Player("jula"));
+
+
+
     }
 }
