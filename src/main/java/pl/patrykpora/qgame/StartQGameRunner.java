@@ -8,9 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.patrykpora.qgame.entity.Player;
 import pl.patrykpora.qgame.repository.PlayerRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import java.util.List;
 
 @Component
 @Log
