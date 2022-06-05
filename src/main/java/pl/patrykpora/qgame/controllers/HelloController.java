@@ -11,7 +11,7 @@ public class HelloController {
     @GetMapping("/")
     public String sayHallo(Model model) {
         model.addAttribute("message", "some message");
-        return "hello";
+        return "index";
     }
 
 
